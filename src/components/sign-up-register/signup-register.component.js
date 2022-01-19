@@ -12,15 +12,15 @@ class SignUpRegister extends React.Component {
       displayName: "",
       email: "",
       password: "",
-      confirmPasword: "",
+      confirmPassword: "",
     };
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { displayName, email, password, confirmPasword } = this.state;
+    const { displayName, email, password, confirmPassword } = this.state;
 
-    if (password !== confirmPasword) {
+    if (password !== confirmPassword) {
       alert("Passowords Do Not Match");
       return;
     }
@@ -50,7 +50,7 @@ class SignUpRegister extends React.Component {
   };
 
   render() {
-    const { displayName, email, password, confirmPasword } = this.state;
+    const { displayName, email, password, confirmPassword } = this.state;
 
     return (
       <div className="sign-up">
@@ -83,9 +83,9 @@ class SignUpRegister extends React.Component {
             required
           />
           <FormInput
-            type="Password"
+            type="password"
             name="confirmPassword"
-            value={confirmPasword}
+            value={confirmPassword}
             onChange={this.handleChange}
             label="Confirm Password"
             required

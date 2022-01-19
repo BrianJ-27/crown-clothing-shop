@@ -52,6 +52,8 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 
 // helps us to focus on the google pop and not other providers like twitter or instagram
+// This will also be imported into our sign-in component
+// and triggered when the user clicks on the blue google sign-in button
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;

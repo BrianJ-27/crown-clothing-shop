@@ -38,6 +38,7 @@ class App extends React.Component {
             },
             () => console.log(this.state)
           );
+          console.log(this.state);
         });
       } else {
         // if the user logs out, set the local current user state to null
