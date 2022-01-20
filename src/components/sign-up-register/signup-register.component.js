@@ -12,16 +12,16 @@ class SignUpRegister extends React.Component {
       displayName: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      passwordConfirm: "",
     };
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { displayName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, passwordConfirm } = this.state;
 
-    if (password !== confirmPassword) {
-      alert("Passowords Do Not Match");
+    if (password !== passwordConfirm) {
+      alert("Passwords Do Not Match");
       return;
     }
 
@@ -37,7 +37,7 @@ class SignUpRegister extends React.Component {
         displayName: "",
         email: "",
         password: "",
-        confirmPasword: "",
+        passwordConfirm: "",
       });
     } catch (error) {
       console.log(error);
@@ -50,7 +50,7 @@ class SignUpRegister extends React.Component {
   };
 
   render() {
-    const { displayName, email, password, confirmPassword } = this.state;
+    const { displayName, email, password, passwordConfirm } = this.state;
 
     return (
       <div className="sign-up">
@@ -82,10 +82,11 @@ class SignUpRegister extends React.Component {
             label="Password"
             required
           />
+
           <FormInput
             type="password"
-            name="confirmPassword"
-            value={confirmPassword}
+            name="passwordConfirm"
+            value={passwordConfirm}
             onChange={this.handleChange}
             label="Confirm Password"
             required
